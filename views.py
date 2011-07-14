@@ -21,11 +21,15 @@ def index(request):
 
   latest_poll_list = Poll.objects.all().order_by('-pub_date')[:5]
   return render_to_response('index.html',{'latest_poll_list': latest_poll_list})
-  
+# in the above step what we are doing is: fetching polls from the database table Polls(models class Poll)  and then passing all the data to index.html for display on clients side.
+
 def detail(request, poll_id):
     p = get_object_or_404(Poll, pk=poll_id)
+# the variable p is the primary key, as returned from the index page. now that value is assigned to 'poll' in the next line.
     return render_to_response('detail.html', {'poll': p},
                                context_instance=RequestContext(request))
+
+# the detail method would show the detail of the poll which user clicks, for that purpose it has a poll_id parameter as input, it then passes this parameter to detail.html which eventually shows the details of the polls (the four option to the questions and the radio box)
 
 def results(request, poll_id):
     p = get_object_or_404(Poll, pk=poll_id)
@@ -38,7 +42,7 @@ def vote(request, poll_id):
         selected_choice = p.choice_set.get(pk=request.POST['choice'])
     except (KeyError, Choice.DoesNotExist):
         # Redisplay the poll voting form.
-        return render_to_response('polls/detail.html', {
+        return render_to_response('detail.html', {
             'poll': p,
             'error_message': "You didn't select a choice.",
         }, context_instance=RequestContext(request))

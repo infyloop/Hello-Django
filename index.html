@@ -1,7 +1,13 @@
 {% if latest_poll_list %}
   <ul>
+# the latest_poll_list variable is passed to it from the index method
+    of views.py, it is an array that contains all the data of the
+    polls table
     {% for poll in latest_poll_list %}
       <li>
+#over here we are making a link to each of the polls, and the poll.id
+the primary key will be passed to other methods for referencing which
+poll did the user click.
         <a href="/polls/{{ poll.id }}">
           {{ poll.question }}
            {{poll.choice }}
