@@ -13,6 +13,6 @@ class PollAdmin(admin.ModelAdmin):
     list_display = ('question', 'pub_date')
     inlines = [ChoiceInline]
     
-admin.site.register(Poll,PollAdmin)
+admin.site.register(Poll, PollAdmin)
 admin.site.register(Choice)
 
