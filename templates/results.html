@@ -2,7 +2,6 @@
 
 <ul>
 {% for choice in poll.choice_set.all %}
-#Returns a plural suffix if the value is not 1 so 2 votes and not 2 vote
     <li>{{ choice.choice }} -- {{ choice.votes }} vote{{ choice.votes|pluralize }}</li>
 {% endfor %}
 </ul>
