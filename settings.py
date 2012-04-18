@@ -3,7 +3,7 @@ DEBUG = True
 TEMPLATE_DEBUG = DEBUG
 ADMINS = (
     # ('Your Name', 'your_email@example.com'),
-)
+    )
 
 MANAGERS = ADMINS
 PROJECT_DIR=os.path.dirname(__file__)
@@ -65,15 +65,15 @@ STATICFILES_DIRS = (
     # Put strings here, like "/home/html/static" or "C:/www/django/static".
     # Always use forward slashes, even on Windows.
     # Don't forget to use absolute paths, not relative paths.
-)
+    )
 
 # List of finder classes that know how to find static files in
 # various locations.
 STATICFILES_FINDERS = (
     'django.contrib.staticfiles.finders.FileSystemFinder',
     'django.contrib.staticfiles.finders.AppDirectoriesFinder',
-#    'django.contrib.staticfiles.finders.DefaultStorageFinder',
-)
+    #    'django.contrib.staticfiles.finders.DefaultStorageFinder',
+    )
 
 # Make this unique, and don't share it with anybody.
 SECRET_KEY = '$y($3i(+!e+ez1(y%a*x87u=p$kp7es2#7h3lz#*#uf=$uk*ny'
@@ -82,18 +82,18 @@ SECRET_KEY = '$y($3i(+!e+ez1(y%a*x87u=p$kp7es2#7h3lz#*#uf=$uk*ny'
 TEMPLATE_LOADERS = (
     'django.template.loaders.filesystem.Loader',
     'django.template.loaders.app_directories.Loader',
-#     'django.template.loaders.eggs.Loader',
-)
+    #     'django.template.loaders.eggs.Loader',
+    )
 
 TEMPLATE_CONTEXT_PROCESSORS = (
-"django.contrib.auth.context_processors.auth",
-"django.core.context_processors.debug",
-"django.core.context_processors.request",
-"django.core.context_processors.i18n",
-"django.core.context_processors.media",
-"django.core.context_processors.static",
-"django.contrib.messages.context_processors.messages"
-        )
+    "django.contrib.auth.context_processors.auth",
+    "django.core.context_processors.debug",
+    "django.core.context_processors.request",
+    "django.core.context_processors.i18n",
+    "django.core.context_processors.media",
+    "django.core.context_processors.static",
+    "django.contrib.messages.context_processors.messages",
+    )
 
 MIDDLEWARE_CLASSES = (
     'django.middleware.common.CommonMiddleware',
@@ -101,7 +101,7 @@ MIDDLEWARE_CLASSES = (
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
-)
+    )
 
 ROOT_URLCONF = 'Hello-Django.urls'
 
@@ -110,7 +110,7 @@ TEMPLATE_DIRS = (
     # Put strings here, like "/home/html/django_templates" or "C:/www/django/templates".
     # Always use forward slashes, even on Windows.
     # Don't forget to use absolute paths, not relative paths.
-)
+    )
 
 
 # A sample logging configuration. The only tangible logging
@@ -125,16 +125,16 @@ LOGGING = {
         'mail_admins': {
             'level': 'ERROR',
             'class': 'django.utils.log.AdminEmailHandler'
-        }
-    },
+            }
+        },
     'loggers': {
         'django.request': {
             'handlers': ['mail_admins'],
             'level': 'ERROR',
             'propagate': True,
-        },
+            },
+        }
     }
-}
 
 DATABASES = {
     'default': {
@@ -144,8 +144,8 @@ DATABASES = {
         'PASSWORD': '',                  # Not used with sqlite3.
         'HOST': '',                      # Set to empty string for localhost. Not used with sqlite3.
         'PORT': '',                      # Set to empty string for default. Not used with sqlite3.
+        }
     }
-}
 
 INSTALLED_APPS = (
     'django.contrib.auth',
@@ -157,9 +157,10 @@ INSTALLED_APPS = (
     # Uncomment the next line to enable the admin:
     'django.contrib.admin',
     'polls',
+    'test_utils',
     # Uncomment the next line to enable admin documentation:
-    # 'django.contrib.admindocs',
-)
+        # 'django.contrib.admindocs',
+    )
 
 
 

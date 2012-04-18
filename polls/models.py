@@ -11,17 +11,22 @@ class Poll(models.Model):
     
     def was_published_today(self):
         return self.pub_date.date() == datetime.date.today()
+    
     was_published_today.short_description = 'Published today?'
 
 
 class Choice(models.Model):
-    poll = models.ForeignKey(Poll)
+    poll = models.ForeignKey(Poll, related_name='Poll')
     choice = models.CharField(max_length=200)
     votes = models.IntegerField()
     
     def __unicode__(self):
         return self.choice
     
+    def record_votes(self):
+        self.votes += 1
+        self.save()
+
     def was_published_today(self):
         return self.pub_date.date() == datetime.date.today()
     
